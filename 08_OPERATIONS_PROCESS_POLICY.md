@@ -1,4 +1,4 @@
-# Operations / Process Execution Hook
+# Operations / Process Execution Policy
 
 ## Scope
 
@@ -7,6 +7,14 @@ Use for SOPs, workflow design, operating cadence, task routing, delegation, proj
 ## Purpose
 
 Prevent bureaucratic process documents that look organized but slow execution and hide responsibility.
+
+## Practitioner Mode
+
+Act like an operations owner. A process exists to make work move, not to look complete. Define trigger, owner, next action, SLA, stall rule, exception path, and the artifact that proves completion.
+
+Start by removing steps. Add a meeting, approval, document, queue, or automation only if it changes speed, quality, accountability, compliance, or recovery.
+
+When a process involves incidents, escalations, handoffs, or recurring failures, name the command role, communicator, recorder, decision maker, and postmortem/change owner.
 
 ## Common Weak Patterns
 
@@ -20,6 +28,9 @@ Prevent bureaucratic process documents that look organized but slow execution an
 - Risk register with no response action.
 - Escalation path with no threshold.
 - No rule for what happens when the process stalls.
+- Automation with no owner for failed runs, retries, audit trail, or manual override.
+- Handoff with no acceptance criteria, input quality bar, or receiving owner.
+- Postmortem or review with no assigned corrective action and due date.
 
 ## Safety Boundary
 
@@ -29,9 +40,9 @@ Prevent bureaucratic process documents that look organized but slow execution an
 
 ## Artifact Boundary
 
-Do not put Codex operating rules, 작업자용 규칙, SOP-writing methodology, answer-quality standards, or hook compliance notes into SOPs, runbooks, delegation docs, workflow specs, or user-facing artifacts unless explicitly requested.
+Do not put Codex operating rules, 작업자용 규칙, SOP-writing methodology, answer-quality standards, or policy compliance notes into SOPs, runbooks, delegation docs, workflow specs, or user-facing artifacts unless explicitly requested.
 
-Operations artifacts should contain trigger, owner, input, steps, handoff, output, metric, exception path, cadence, and stop condition. Reusable guidance for how Codex should design or write belongs in this hook or in the assistant response.
+Operations artifacts should contain trigger, owner, input, steps, handoff, output, metric, exception path, cadence, and stop condition. Reusable guidance for how Codex should design or write belongs in this policy or in the assistant response.
 
 ## Required Output Contract
 
@@ -56,23 +67,29 @@ Include:
    - decision points,
    - required artifacts.
 
-5. **SLA / Cadence**
+5. **Handoff and Quality Bar**
+   - required input,
+   - acceptance criteria,
+   - receiving owner,
+   - reject/rework rule.
+
+6. **SLA / Cadence**
    - time limits,
    - review frequency,
    - meeting output if any.
 
-6. **Escalation and Stall Rule**
+7. **Escalation and Stall Rule**
    - threshold,
    - who decides,
    - what happens next,
    - action if no response.
 
-7. **Metrics**
+8. **Metrics**
    - speed,
    - quality,
    - failure/rework rate.
 
-8. **Anti-Bureaucracy Check**
+9. **Anti-Bureaucracy Check**
    - steps removed,
    - approvals avoided,
    - documents not created.
@@ -109,6 +126,7 @@ Before finalizing, confirm:
 
 - owner and decision rights are named,
 - trigger and done condition exist,
+- handoff and quality bar are explicit when work crosses people/systems,
 - unnecessary approvals are removed,
 - escalation and stall rule exists,
 - metrics are measurable,

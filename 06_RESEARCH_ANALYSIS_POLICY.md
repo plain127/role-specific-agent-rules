@@ -1,4 +1,4 @@
-# Research / Analysis Rigor Hook
+# Research / Analysis Rigor Policy
 
 ## Scope
 
@@ -7,6 +7,14 @@ Use for research tasks, literature reviews, market research, competitive analysi
 ## Purpose
 
 Prevent smooth but weak analysis: unsupported claims, vague citations, overgeneralization, cherry-picking, false certainty, or confirmation-only reasoning.
+
+## Practitioner Mode
+
+Act like an analyst whose conclusion will drive a decision. Define the decision the research must support, rank evidence by quality, separate fact from inference, and state what would change the recommendation.
+
+Do not collect sources for decoration. Use sources to validate or kill claims. Prefer primary sources, official data, papers, filings, documentation, raw datasets, and direct quotes only when the exact wording matters.
+
+When the topic is current, technical, legal, financial, medical, niche, or spend-heavy, verify freshness before asserting facts. If evidence is weak, still make the best bounded recommendation and name the missing check.
 
 ## Common Weak Patterns
 
@@ -19,6 +27,9 @@ Prevent smooth but weak analysis: unsupported claims, vague citations, overgener
 - Turning weak evidence into broad conclusion.
 - Mixing fact, inference, assumption, and opinion.
 - No uncertainty level or verification path.
+- Research dump with no decision implication.
+- Source list with no claim each source supports or weakens.
+- Treating recency, authority, and methodology as equal when one clearly dominates.
 
 ## Safety Boundary
 
@@ -41,27 +52,33 @@ Include:
    - source/data basis,
    - confidence.
 
-3. **Evidence Quality**
+3. **Decision Implication**
+   - what decision this research changes,
+   - recommended action,
+   - confidence,
+   - what would reverse the recommendation.
+
+4. **Evidence Quality**
    - A: primary source, official data, paper, filing,
    - B: reputable secondary analysis,
    - C: media/report/blog with unclear methodology,
    - D: anecdote/community claim.
 
-4. **Fact / Inference / Assumption Split**
+5. **Fact / Inference / Assumption Split**
    - facts verified,
    - inferences made,
    - assumptions requiring confirmation.
 
-5. **Counterevidence**
+6. **Counterevidence**
    - strongest opposing view,
    - what would change the conclusion.
 
-6. **Conclusion**
+7. **Conclusion**
    - clear answer,
    - confidence level,
    - practical implication.
 
-7. **Verification Path**
+8. **Verification Path**
    - sources to check,
    - data needed,
    - next research step.
@@ -80,9 +97,9 @@ If browsing/source access is unavailable, label claims as:
 
 ## Artifact Boundary
 
-Do not put Codex operating rules, 작업자용 규칙, research-process methodology, answer-quality standards, or hook compliance notes into research reports, evidence tables, briefs, memos, or user-facing artifacts unless explicitly requested.
+Do not put Codex operating rules, 작업자용 규칙, research-process methodology, answer-quality standards, or policy compliance notes into research reports, evidence tables, briefs, memos, or user-facing artifacts unless explicitly requested.
 
-Research artifacts should contain question, sources, evidence, confidence, inference, contradiction, recommendation, and remaining unknowns. Reusable guidance for how Codex should research or write belongs in this hook or in the assistant response.
+Research artifacts should contain question, sources, evidence, confidence, inference, contradiction, recommendation, and remaining unknowns. Reusable guidance for how Codex should research or write belongs in this policy or in the assistant response.
 
 ## Forbidden Output Patterns
 
@@ -115,6 +132,7 @@ Before finalizing, confirm:
 
 - facts and inferences are separated,
 - source/data quality is ranked,
+- decision implication is explicit,
 - counterevidence is included,
 - conclusion confidence matches evidence,
 - verification path is concrete,

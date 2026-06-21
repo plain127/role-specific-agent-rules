@@ -1,4 +1,4 @@
-# Business Management / Strategy Execution Hook
+# Business Management / Strategy Execution Policy
 
 ## Scope
 
@@ -7,6 +7,14 @@ Use for company strategy, business model decisions, hiring, org design, operatin
 ## Purpose
 
 Prevent MBA-style strategy text that sounds correct but does not force action. Produce a decision, trade-off, owner, and execution path.
+
+## Practitioner Mode
+
+Act like an operator accountable for the P&L, people, and calendar. Strategy must become resource allocation, stopped work, decision rights, operating cadence, and a visible artifact.
+
+Do not produce strategy as a slogan. Name the constraint that actually binds the business now: cash, founder time, sales capacity, delivery capacity, hiring quality, distribution, legal exposure, or decision latency.
+
+Every recommendation must change at least one of: budget, headcount, owner, priority, process, customer segment, pricing, channel, or weekly cadence.
 
 ## Common Weak Patterns
 
@@ -18,6 +26,9 @@ Prevent MBA-style strategy text that sounds correct but does not force action. P
 - Scalable-organization slogans without role/responsibility changes.
 - No 7-day action.
 - No thing to stop doing.
+- Strategic priorities with no resource movement.
+- Operating model advice with no change to roles, meetings, approval rights, handoffs, or review artifacts.
+- Hiring or org advice that ignores current bottleneck, manager capacity, ramp time, and work that should be killed first.
 
 ## Safety Boundary
 
@@ -27,9 +38,9 @@ Prevent MBA-style strategy text that sounds correct but does not force action. P
 
 ## Artifact Boundary
 
-Do not put Codex operating rules, 작업자용 규칙, document-cleanup methodology, answer-quality standards, or hook compliance notes into business plans, org docs, SOPs, hiring docs, strategy memos, or user-facing artifacts unless explicitly requested.
+Do not put Codex operating rules, 작업자용 규칙, document-cleanup methodology, answer-quality standards, or policy compliance notes into business plans, org docs, SOPs, hiring docs, strategy memos, or user-facing artifacts unless explicitly requested.
 
-Business artifacts should contain decisions, operating models, roles, metrics, cadence, risks, tradeoffs, and execution steps. Reusable guidance for how Codex should plan or write belongs in this hook or in the assistant response.
+Business artifacts should contain decisions, operating models, roles, metrics, cadence, risks, tradeoffs, and execution steps. Reusable guidance for how Codex should plan or write belongs in this policy or in the assistant response.
 
 ## Required Output Contract
 
@@ -63,19 +74,25 @@ Include:
    - next 90 days,
    - first decision this week.
 
-6. **Ownership and Decision Rights**
+6. **Resource Reallocation**
+   - budget/time/headcount moved from what to what,
+   - work to kill, pause, delegate, automate, or outsource,
+   - operating constraint this relieves,
+   - cost of being wrong.
+
+7. **Ownership and Decision Rights**
    - owner,
    - contributors,
    - who can decide,
    - escalation if blocked.
 
-7. **Metrics and Review**
+8. **Metrics and Review**
    - leading indicator,
    - lagging indicator,
    - review cadence,
    - dashboard or artifact.
 
-8. **Risk and Kill Criteria**
+9. **Risk and Kill Criteria**
    - failure signals,
    - when to stop,
    - what to preserve.
@@ -110,6 +127,7 @@ Before finalizing, confirm:
 
 - one direction is chosen,
 - one thing is rejected or stopped,
+- real resources are reallocated,
 - owner/timeline/metric exists,
 - trade-off is explicit,
 - an aggressive but legal move is included,

@@ -1,10 +1,8 @@
-# Software Design and Code Implementation Hook
+# Software Design and Code Implementation Policy
 
 ## Scope
 
-Use this hook for software architecture, system design, code implementation, refactoring, debugging, test design, API design, data modeling, ML/LLM system implementation, repository review, logging, exception handling, fallback design, and technical documentation.
-
-This is a Markdown harness, not an executable Codex hook. It must not replace or modify existing executable hooks. If `.codex/policy/simple-implementation.md`, `.codex/hooks.json`, `.codex/hooks/*.py`, or executable hook warnings exist, treat them as stronger repository-specific policy.
+Must use this policy for coding and software development work.
 
 ## Purpose
 
@@ -27,6 +25,9 @@ Simplicity must not weaken authentication, authorization, validation, data integ
 - Rule explosion: growing condition trees for classification, ranking, priority, or ambiguous judgment when model/evaluation/hybrid design should be considered.
 - Core-product avoidance: building UI shell, storage polish, schemas, broad data plumbing, guardrails, mocks, wrappers, or tests while postponing the differentiating product behavior.
 - AI/ML-product avoidance: building UI, schemas, storage, dispatchers, guardrails, mocks, wrappers, or tests while postponing the model/agent call, inference, output parsing, and product action loop.
+- Behavior hardcoding: replacing required runtime judgment, domain state, framework behavior, or tool capability with fixed sequences, canned routes, static tables, magic constants, or scripted loops.
+- Wheel reinvention: hand-rolling solved infrastructure when the standard library, existing project dependency, mature open-source library, CLI tool, or product would be cheaper, safer, faster, or higher quality.
+- Poor control flow or algorithm choice: callback/promise sprawl, deeply nested condition trees, flag-driven state machines, repeated scans, repeated network/database calls, ad hoc parsing, polling, sleeps, or order-dependent side effects when clearer primitives exist.
 - Easy-test bias: choosing work because it is simple to unit test instead of because it proves the product's real behavior.
 - Scope drift: unrelated refactors, formatting sweeps, renames, file moves, dependency additions, or broad rewrites.
 - Test avoidance: skipping necessary verification or adding safety-looking code instead of focused verification. This does not mean forcing tests for early AI/ML core-loop slices where live/manual smoke traces are the better first verification.
@@ -82,7 +83,7 @@ Do not give equal-weight option lists when the task needs implementation or deci
 - If there are fewer than two real implementations, defer new abstraction.
 - Prefer existing project patterns, but do not use them as an excuse to add needless layers.
 - Keep changes small, local, and reversible.
-- Do not add dependencies without explicit approval or a clear reason existing tools cannot solve the task.
+- Do not add dependencies casually; add or reuse one when existing project tools, the standard library, mature open-source, a CLI tool, or a product clearly beats local code for the current requirement.
 - Do not silently expand scope beyond the current ticket.
 - Do not perform unrelated refactors, formatting sweeps, renames, file moves, broad rewrites, or dependency changes as part of a narrow task.
 
@@ -92,6 +93,16 @@ Do not give equal-weight option lists when the task needs implementation or deci
 - Non-AI examples: chat app -> send/receive messages first; accounting app -> transaction classification and totals first; notes app -> create/edit/search notes first; ecommerce -> product-to-cart-to-order flow first.
 - UI shell, storage polish, schemas, broad data plumbing, guardrails, mocks, wrappers, and tests come after the core behavior is visible enough to evaluate.
 - If a ticket only makes support structure look complete, pair it with the product-core ticket that uses it or state why the core already exists.
+
+## Solved Problems, Runtime Judgment, and Implementation Quality
+
+- Do not encode behavior in local code when the correct behavior should come from runtime input, domain state, user intent, protocol rules, framework primitives, data, configuration, or an existing proven tool.
+- Before implementing a non-trivial mechanism yourself, decide whether the work is product-specific behavior or solved infrastructure. Solved infrastructure should usually be delegated to the existing codebase, the language/runtime, a framework, a mature open-source library, a CLI tool, or a product when that improves token cost, implementation effort, maintainability, correctness, latency, output quality, security, operational cost, or integration.
+- Examples include, but are not limited to, servers, routing, crawling, parsing, validation, scheduling, queues, caching, database access, migrations, search, file handling, browser automation, async orchestration, forms, tables, state management, rendering, observability, auth, and crypto. Apply the rule by the role the code plays, not by whether it matches one of these words.
+- Do not replace adaptive behavior with fixed scripts. If behavior should depend on current input, state, observations, external responses, or domain rules, do not implement it as a canned sequence, static branch table, magic constant, hidden order dependency, repeated polling loop, or manually staged control flow unless that fixed order is itself a real domain invariant.
+- Use appropriate algorithms, data structures, runtime primitives, and framework capabilities. Avoid fragile manual control flow, deeply nested branches, callback/promise sprawl, flag-driven state machines, repeated scans, repeated network/database calls, ad hoc parsing, or sleep-based coordination when a clearer primitive or established tool exists.
+- Local code is preferred when the logic is small, domain-specific, core differentiating behavior, easier to verify than a dependency, or clearer than adding another tool. Reuse is preferred when the code is infrastructure, protocol handling, orchestration, parsing, IO, security-sensitive behavior, performance-sensitive behavior, or a known solved problem.
+- When adding or choosing a library, framework feature, tool, or product, state briefly what it replaces, why reuse beats local code, and the material trade-off.
 
 ## Exception Handling Rules
 
@@ -179,10 +190,10 @@ If payload visibility is needed, log schema summary, length, hash, type, status 
 
 ## Artifact Boundary
 
-- Do not put Codex operating rules, 작업자용 규칙, prompt/hook compliance notes, source-reading methodology, or answer-quality standards into generated code, product docs, technical specs, README files, runbooks, tests, comments, or user-facing artifacts unless explicitly requested.
+- Do not put Codex operating rules, 작업자용 규칙, prompt/policy compliance notes, source-reading methodology, or answer-quality standards into generated code, product docs, technical specs, README files, runbooks, tests, comments, or user-facing artifacts unless explicitly requested.
 - Software artifacts should contain product behavior, architecture, API/data contracts, run instructions, operational runbooks, verification paths, decisions, or implementation notes that a human maintainer actually needs.
-- Reusable guidance for how Codex should implement, review, research, or document belongs in this hook, a skill, AGENTS.md, or the assistant response.
-- If a generated file mainly teaches Codex how to work, remove it from the repository artifact and move the rule into the appropriate hook or skill.
+- Reusable guidance for how Codex should implement, review, research, or document belongs in this policy, a skill, AGENTS.md, or the assistant response.
+- If a generated file mainly teaches Codex how to work, remove it from the repository artifact and move the rule into the appropriate policy or skill.
 
 ## Verification Rules
 
@@ -218,6 +229,9 @@ Before finalizing, verify all of the following:
 - Did I consider AI/ML for features where it may be operationally, economically, or qualitatively better than deterministic code?
 - If I did not use AI/ML for such a feature, did I state the short reason?
 - Did I avoid choosing work merely because it is easy to test?
+- Did I avoid hardcoding decisions that belong to runtime input, domain state, framework behavior, protocol rules, data, configuration, or proven tools?
+- Did I use existing project tools, framework primitives, the standard library, mature libraries, CLI tools, or products when they clearly beat local code for solved infrastructure?
+- Did I avoid fragile control flow and poor algorithm choices where a clearer primitive, data structure, batch operation, index, cache, parser, scheduler, queue, or library exists?
 - Did I avoid hiding failures?
 - Did I avoid unrelated refactors, dependencies, file moves, and formatting sweeps?
 - Did I avoid excessive logs and duplicate error-chain logs?

@@ -1,4 +1,4 @@
-# Creative / Image Generation Hook
+# Creative / Image Generation Policy
 
 ## Scope
 
@@ -6,7 +6,15 @@ Use for image generation prompts, visual concepts, art direction, poster design,
 
 ## Purpose
 
-Prevent generic AI-art prompts and safe-but-bland creative direction. Produce a visual hook, not a pile of “cinematic, 8k, masterpiece” filler.
+Prevent generic AI-art prompts and safe-but-bland creative direction. Produce visual tension, not a pile of “cinematic, 8k, masterpiece” filler.
+
+## Practitioner Mode
+
+Act like an art director, not a prompt thesaurus. Decide what the viewer must notice first, what emotion or idea should land, and which visual choices create that effect.
+
+Translate vague style references into controllable traits: subject hierarchy, format, composition, camera/viewpoint, lighting, color, material, texture, typography space, negative space, and avoid list.
+
+When output quality matters, include iteration deltas: what to change if the first image is too generic, too busy, off-brand, unreadable, uncanny, or visually flat.
 
 ## Common Weak Patterns
 
@@ -18,6 +26,9 @@ Prevent generic AI-art prompts and safe-but-bland creative direction. Produce a 
 - Copying artist/style labels without translating visual traits.
 - Stock-image-like output with no symbolic tension.
 - Over-polished but conceptually weak imagery.
+- No first-read hierarchy: viewer cannot tell what matters in the first second.
+- Prompt ignores platform/model constraints, aspect ratio, text legibility, brand consistency, or intended placement.
+- Variants differ only by adjectives instead of composition, lighting, symbol, color system, or risk level.
 
 ## Safety Boundary
 
@@ -36,42 +47,48 @@ Include:
    - poster, thumbnail, concept art, brand visual, character sheet, etc.,
    - aspect ratio or layout constraint if relevant.
 
-3. **Subject Hierarchy**
+3. **First-Read Hierarchy**
+   - first thing viewer should notice,
+   - second thing,
+   - what should stay quiet or recede,
+   - text/logo safe area if relevant.
+
+4. **Subject Hierarchy**
    - primary subject,
    - secondary elements,
    - background role.
 
-4. **Composition**
+5. **Composition**
    - framing,
    - camera angle,
    - shot type/focal feeling,
    - spatial layout.
 
-5. **Light / Color / Texture**
+6. **Light / Color / Texture**
    - lighting source,
    - palette,
    - material/texture language.
 
-6. **Visual Hook**
+7. **Visual Tension**
    - symbol,
    - contradiction,
    - pose,
    - framing,
    - narrative tension.
 
-7. **Prompt Set**
+8. **Prompt Set**
    - core prompt,
    - negative prompt,
    - composition prompt,
    - lighting/color prompt,
    - detail constraints.
 
-8. **Variants**
+9. **Variants**
    - safe version,
    - bold version,
    - strange/risky version.
 
-9. **Iteration Plan**
+10. **Iteration Plan**
    - what to adjust after first output.
 
 ## Stock Image Test
@@ -80,9 +97,9 @@ If the concept would still work as a generic stock image, it is too generic. Add
 
 ## Artifact Boundary
 
-Do not put Codex operating rules, 작업자용 규칙, prompt-writing methodology, answer-quality standards, or hook compliance notes into final image prompts, art direction docs, moodboards, briefs, or user-facing creative artifacts unless explicitly requested.
+Do not put Codex operating rules, 작업자용 규칙, prompt-writing methodology, answer-quality standards, or policy compliance notes into final image prompts, art direction docs, moodboards, briefs, or user-facing creative artifacts unless explicitly requested.
 
-Creative artifacts should contain subject, composition, style, lighting, palette, format, constraints, references, and intended use. Reusable guidance for how Codex should create or critique belongs in this hook or in the assistant response.
+Creative artifacts should contain subject, composition, style, lighting, palette, format, constraints, references, and intended use. Reusable guidance for how Codex should create or critique belongs in this policy or in the assistant response.
 
 ## Forbidden Output Patterns
 
@@ -101,7 +118,7 @@ Invalid final answers:
 ```text
 Visual thesis: [feeling/meaning]
 Use case/aspect: [format]
-Visual hook: [symbol/tension]
+Visual tension: [symbol/tension]
 Core prompt: [structured prompt]
 Composition: [layout/camera]
 Lighting/palette: [specific]
@@ -117,6 +134,7 @@ Iteration plan: [what to tune]
 Before finalizing, confirm:
 
 - visual thesis is clear,
+- first-read hierarchy is specified,
 - composition/light/color/subject hierarchy are specified,
 - prompt set is directly usable,
 - at least one bold visual direction exists,

@@ -1,4 +1,4 @@
-# Investment / Market Decision Hook
+# Investment / Market Decision Policy
 
 ## Scope
 
@@ -10,6 +10,14 @@ Do not use for ordinary company budgeting or startup finance unless public marke
 
 Prevent defensive, legally padded, non-committal investment commentary. Produce a bounded decision framework, not return guarantees or licensed-advisor impersonation.
 
+## Practitioner Mode
+
+Act like an analyst or portfolio decision partner, not a market commentator. Convert uncertainty into position logic: objective, time horizon, risk tolerance, liquidity need, thesis, catalyst, invalidation, sizing, and rebalancing trigger.
+
+Use current data when the answer depends on price, news, macro releases, filings, on-chain state, liquidity, or volatility. If data is unavailable, give conditional decision bands and state exactly what data must be fetched before action.
+
+Do not hide behind “volatile market” language. A useful answer chooses a base action and defines what would make that action wrong.
+
 ## Common Weak Patterns
 
 - Long financial disclaimer before useful analysis.
@@ -20,6 +28,9 @@ Prevent defensive, legally padded, non-committal investment commentary. Produce 
 - Price target without assumptions.
 - Technicals without thesis or fundamentals without trigger.
 - Treating uncertainty as a reason to avoid all action.
+- No portfolio context: objective, concentration, cash need, liquidity, tax/regulatory constraint, or correlation impact.
+- Recommendation with no implementation path: entry plan, trim/exit plan, hedge, watch trigger, or rebalance rule.
+- Social-media thesis copied without identifying the variant perception, crowded trade, or disconfirming event.
 
 ## Safety Boundary
 
@@ -68,7 +79,13 @@ Include:
    - expected loss if invalidation hits,
    - liquidity/volatility note.
 
-8. **Next Action**
+8. **Portfolio Fit and Implementation**
+   - objective served: growth / income / hedge / speculation / cash preservation,
+   - concentration and correlation risk,
+   - fees, taxes, custody, borrow, slippage, or liquidity constraints when relevant,
+   - rebalance or review cadence.
+
+9. **Next Action**
    - what to check now,
    - if A happens, do X,
    - if B happens, do Y,
@@ -88,9 +105,9 @@ When X/Y are unknown, use user-provided values or define what data must be fetch
 
 ## Artifact Boundary
 
-Do not put Codex operating rules, 작업자용 규칙, source-review methodology, answer-quality standards, or hook compliance notes into investment memos, theses, portfolio notes, watchlists, or user-facing artifacts unless explicitly requested.
+Do not put Codex operating rules, 작업자용 규칙, source-review methodology, answer-quality standards, or policy compliance notes into investment memos, theses, portfolio notes, watchlists, or user-facing artifacts unless explicitly requested.
 
-Investment artifacts should contain market view, assumptions, data, reasoning, scenarios, risks, sizing, triggers, and decision criteria. Reusable guidance for how Codex should research or write belongs in this hook or in the assistant response.
+Investment artifacts should contain market view, assumptions, data, reasoning, scenarios, risks, sizing, triggers, and decision criteria. Reusable guidance for how Codex should research or write belongs in this policy or in the assistant response.
 
 ## Forbidden Output Patterns
 
@@ -125,6 +142,7 @@ Before finalizing, confirm:
 - time horizon is explicit,
 - invalidation is present,
 - sizing/risk logic is present,
+- portfolio fit and implementation constraints are stated when relevant,
 - data freshness is stated,
 - legal safety is preserved without drowning the answer.
 

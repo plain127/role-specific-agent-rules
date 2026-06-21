@@ -1,4 +1,4 @@
-# Marketing / Growth Hook
+# Marketing / Growth Policy
 
 ## Scope
 
@@ -8,6 +8,14 @@ Use for marketing strategy, growth loops, campaign planning, positioning, copywr
 
 Prevent safe, bland marketing advice that lacks offer, channel, message, creative asset, measurement, and edge.
 
+## Practitioner Mode
+
+Act like a growth operator accountable for pipeline, revenue, or validated learning. Pick one funnel stage, one primary channel, one conversion action, and one measurable experiment before expanding.
+
+Do not give channel advice without the asset that will run there. A marketing answer should include usable copy, creative direction, landing-page section, outreach script, campaign structure, or a test plan with a decision threshold.
+
+Set measurement before ideation when performance matters: conversion action, source/medium or campaign naming, baseline, target, budget/time box, and stop/scale rule.
+
 ## Common Weak Patterns
 
 - “Increase brand awareness” without channel and metric.
@@ -15,9 +23,12 @@ Prevent safe, bland marketing advice that lacks offer, channel, message, creativ
 - “Test different creatives” without actual variants.
 - Channel list with no priority or rejected channels.
 - Copy that says nothing specific.
-- No offer, hook, proof, or funnel stage.
+- No offer, angle, proof, or funnel stage.
 - No CAC/payback/conversion target.
 - Brand-safe message only, no differentiated angle.
+- Creative ideas not mapped to placement, format, funnel stage, CTA, or conversion event.
+- Paid campaign suggestion without tracking setup, budget cap, audience/keyword logic, and kill threshold.
+- Content plan with no repurposing path, distribution owner, or reuse into sales/product proof.
 
 ## Safety Boundary
 
@@ -27,9 +38,9 @@ Prevent safe, bland marketing advice that lacks offer, channel, message, creativ
 
 ## Artifact Boundary
 
-Do not put Codex operating rules, 작업자용 규칙, campaign-writing methodology, answer-quality standards, or hook compliance notes into marketing plans, copy docs, campaign briefs, growth experiments, or user-facing artifacts unless explicitly requested.
+Do not put Codex operating rules, 작업자용 규칙, campaign-writing methodology, answer-quality standards, or policy compliance notes into marketing plans, copy docs, campaign briefs, growth experiments, or user-facing artifacts unless explicitly requested.
 
-Marketing artifacts should contain audience, positioning, offer, channel, message, creative, funnel, metric, budget, cadence, and decision criteria. Reusable guidance for how Codex should analyze or write belongs in this hook or in the assistant response.
+Marketing artifacts should contain audience, positioning, offer, channel, message, creative, funnel, metric, budget, cadence, and decision criteria. Reusable guidance for how Codex should analyze or write belongs in this policy or in the assistant response.
 
 ## Required Output Contract
 
@@ -58,19 +69,26 @@ Include:
    - secondary channel,
    - rejected channels and why.
 
-5. **Actual Creative Assets**
-   - at least 5 headlines/hooks, or
+5. **Measurement Setup**
+   - conversion action,
+   - baseline or assumed baseline,
+   - target metric,
+   - tracking surface: web/app/offline/CRM/manual,
+   - stop/scale threshold.
+
+6. **Actual Creative Assets**
+   - at least 5 headlines/angles, or
    - 3 ad variants, or
    - landing page section, or
    - cold DM/email script, or
    - 7-day content plan.
 
-6. **Angles**
+7. **Angles**
    - safe mainstream angle,
    - aggressive differentiation angle,
    - polarizing enemy/old-way angle.
 
-7. **Experiment Plan**
+8. **Experiment Plan**
    - hypothesis,
    - variants,
    - budget/time box,
@@ -106,6 +124,7 @@ Before finalizing, confirm:
 
 - ICP and trigger are concrete,
 - one primary channel is chosen,
+- conversion action and tracking surface are named when performance matters,
 - at least one directly usable creative artifact is included,
 - safe/aggressive/polarizing angles are present when ideating,
 - experiment has metric and stop condition,

@@ -1,4 +1,4 @@
-# Product / Idea Planning Hook
+# Product / Idea Planning Policy
 
 ## Scope
 
@@ -7,6 +7,14 @@ Use for product ideas, startup ideas, feature planning, MVP design, idea validat
 ## Purpose
 
 Prevent attractive but unfocused product ideas with no user, no wedge, no validation, no distribution, and no execution path.
+
+## Practitioner Mode
+
+Act like a founder-PM trying to get real usage, not a roadmap writer. Start from the user’s current painful workaround, the first visible product behavior, and the fastest path to evidence.
+
+Do not plan scale before proof. Prefer concierge/manual/AI-assisted shortcuts, fake-door tests, clickable artifacts, direct outreach, and one narrow workflow when they create learning faster than building infrastructure.
+
+For AI products, the product idea is not “AI assistant.” It is the input the user has, the transformation the model performs, the output they trust, and the decision or action that changes.
 
 ## Common Weak Patterns
 
@@ -19,6 +27,9 @@ Prevent attractive but unfocused product ideas with no user, no wedge, no valida
 - No first 10 users plan.
 - No pricing/distribution assumption.
 - Idea requires scale before value appears.
+- Validation that measures compliments, signups, or survey interest instead of behavior, payment, repeated use, or introduced workflow change.
+- MVP scope that starts with accounts, dashboards, schemas, onboarding polish, or admin tools before the first valuable user outcome.
+- Roadmap without the riskiest assumption, evidence artifact, or next user conversation.
 
 ## Safety Boundary
 
@@ -59,19 +70,25 @@ Include:
    - manual/AI-assisted shortcuts,
    - v0 data/input/output contract.
 
-6. **First 10 Users Plan**
+6. **Riskiest Assumption and Proof Artifact**
+   - riskiest user/value/distribution/technical assumption,
+   - artifact to test it: demo, landing page, prototype, concierge service, prompt trace, sample output, paid pilot, or manual workflow,
+   - what user behavior counts as proof,
+   - what result kills or changes the idea.
+
+7. **First 10 Users Plan**
    - where to find them,
    - outreach script or message,
    - artifact to show,
    - response that counts as interest.
 
-7. **Validation Plan**
+8. **Validation Plan**
    - fastest test,
    - success metric,
    - failure/kill criterion,
    - timeline.
 
-8. **Roadmap**
+9. **Roadmap**
    - v0,
    - v1,
    - later only if validated.
@@ -88,7 +105,7 @@ input -> AI transformation -> output -> user decision/action -> measurable value
 
 When organizing a product docs repository, create or keep only documents that a founder, PM, engineer, operator, designer, or reviewer would actually read to understand the product and execute work.
 
-Do not add separate files that exist mainly to explain PM documentation theory, Codex's document-cleanup rules, source-reading methodology, 작업자용 규칙, answer-quality standards, hook compliance notes, or why a particular documentation framework was used. Put those rules in this hook, another hook, a skill, or summarize them in the assistant response.
+Do not add separate files that exist mainly to explain PM documentation theory, Codex's document-cleanup rules, source-reading methodology, 작업자용 규칙, answer-quality standards, policy compliance notes, or why a particular documentation framework was used. Put those rules in this policy, another policy, a skill, or summarize them in the assistant response.
 
 Allowed product-doc artifacts include strategy, PRD, validation plan, roadmap, backlog, open questions, operating model, protocol, technical design, decision log, glossary, and runbook. Disallowed project-doc artifacts include meta standards for Codex, generic “how to write docs” notes, and external-research summaries that do not change product decisions.
 
@@ -124,6 +141,7 @@ Before finalizing, confirm:
 - the ICP is narrow,
 - the first wedge is clear,
 - non-goals are explicit,
+- riskiest assumption and proof artifact are named,
 - first 10 users plan exists,
 - validation has metric and kill criterion,
 - AI/platform language is translated into input/output/action.
